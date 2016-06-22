@@ -18,10 +18,12 @@ echo $password;
 $password = sha1($password);
 
 echo $password; 
+echo "\n";
 /* displays e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4 */
 ?>
 
 <!-- <form action="validate.php" method="post"> -->
+<!--
 <form>
   <label for="userid">ID</label>
   <input type="text" name="userid" id="userid" />
@@ -31,9 +33,10 @@ echo $password;
   <br />
   <input type="submit" name="submit" value="Submit" />
 </form>
+--!>
 
 <?php
-echo "Opening database";
+echo "Opening database\n";
 $host = "host=ec2-23-23-211-21.compute-1.amazonaws.com";
 $port= "port=5432";
 $dbname = "dbname=df18q3f7uv9r66";
