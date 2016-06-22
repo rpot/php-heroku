@@ -5,15 +5,32 @@
 <title>Home page – My Website</title>
 <meta http-equiv="description" content="page description" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<style type="text/css">@import "styles.css";</style>
 </head>
 
 <body>
 
-<?php echo "TESTING";?>
+<?php
+$password = "secret";
 
-This is the content of the page
+echo $password;
+/* displays secret */
 
+$password = sha1($password);
+
+echo $password; 
+/* displays e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4 */
+?>
+
+<form>
+  <label for="userid">ID</label>
+  <input type="text" name="userid" id="userid" />
+  <br />
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" />
+  <br />
+  <input type="submit" name="submit" value="Submit" />
+</form>
+Read more at http://codewalkers.com/c/a/Miscellaneous/Writing-a-Basic-Authentication-System-in-PHP/2/#lrqcbvTxHdO9dB5L.99
 
 </body>
 </html>
