@@ -33,6 +33,7 @@ echo $password;
 </form>
 
 <?php
+echo "Opening database";
 $host = "host=ec2-23-23-211-21.compute-1.amazonaws.com";
 $port= "port=5432";
 $dbname = "dbname=df18q3f7uv9r66";
