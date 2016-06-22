@@ -47,20 +47,30 @@ $db = pg_connect( "$host $port $dbname $credentials"  );
    } else {
       echo "Opened database successfully\n";
    }
-pg_close($db);
-   
-echo "Opening database 2\n";
-$host = "host=ec2-54-235-177-62.compute-1.amazonaws.com";
-$port= "port=5432";
-$dbname = "dbname=dfif9883lkmv0m";
-$credentials = "user=ecyxybbwrnfpyt password=HAtdGLA-NZz5JTBddqmFFXSarD";
-$db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db){
-      echo "Error : Unable to open database\n";
+$sql =<<<EOF
+      INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+      VALUES (1, 'Paul', 32, 'California', 20000.00 );
+
+      INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+      VALUES (2, 'Allen', 25, 'Texas', 15000.00 );
+
+      INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+      VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );
+
+      INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+      VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );
+EOF;
+
+   $ret = pg_query($db, $sql);
+   if(!$ret){
+      echo pg_last_error($db);
    } else {
-      echo "Opened database successfully\n";
+      echo "Records created successfully\n";
    }
+   pg_close($db);
+?>
 pg_close($db);
+
 
 ?>
 
