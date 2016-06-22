@@ -33,18 +33,17 @@ echo $password;
 </form>
 
 <?php
-$dbconn = pg_connect("host=ec2-23-23-211-21.compute-1.amazonaws.com dbname=df18q3f7uv9r66 user=ggpqlztfopnjkw password=qRDY5I2d3_CvBg2_0fxNpjO3o_")
-    or die('Could not connect: ' . pg_last_error());
+$host = "host=ec2-23-23-211-21.compute-1.amazonaws.com";
+$port= "port=5432";
+$dbname = "dbname=df18q3f7uv9r66";
+$credentials = "user=ggpqlztfopnjkw password=qRDY5I2d3_CvBg2_0fxNpjO3o_";
+$db = pg_connect( "$host $port $dbname $credentials"  );
+   if(!$db){
+      echo "Error : Unable to open database\n";
+   } else {
+      echo "Opened database successfully\n";
+   }
 
-$query = "CREATE TABLE MyGuests (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-firstname VARCHAR(30) NOT NULL,
-lastname VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-reg_date TIMESTAMP
-)";
-$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-echo "Table MyGuests created successfully";
 ?>
 
 </body>
