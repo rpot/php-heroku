@@ -21,16 +21,21 @@ echo $password;
 /* displays e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4 */
 ?>
 
+<!-- <form action="validate.php" method="post"> -->
 <form>
   <label for="userid">ID</label>
   <input type="text" name="userid" id="userid" />
   <br />
-  <label for="password">Password</label>
+  <label for="password">Password: </label>
   <input type="password" name="password" id="password" />
   <br />
   <input type="submit" name="submit" value="Submit" />
 </form>
-Read more at http://codewalkers.com/c/a/Miscellaneous/Writing-a-Basic-Authentication-System-in-PHP/2/#lrqcbvTxHdO9dB5L.99
+
+<?php
+$dbconn = pg_connect("host=ec2-23-23-211-21.compute-1.amazonaws.com dbname=df18q3f7uv9r66 user=ggpqlztfopnjkw password=qRDY5I2d3_CvBg2_0fxNpjO3o_")
+    or die('Could not connect: ' . pg_last_error());
+?>
 
 </body>
 </html>
