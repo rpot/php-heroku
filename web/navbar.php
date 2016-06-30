@@ -19,10 +19,10 @@
 try {
 $db = "dfif9883lkmv0m";
 $host = "ec2-54-235-177-62.compute-1.amazonaws.com";
-$port = "5432";
+$port = 5432;
 $user = "ecyxybbwrnfpyt";
 $pw = "HAtdGLA-NZz5JTBddqmFFXSarD";
-$PDO = PDO('pgsql:dbname=$db;host=$host;user=$user;password=$pw');
+$PDO = PDO('pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$pw');
 echo "Connected";
 }
 catch (PDOException $e) {
