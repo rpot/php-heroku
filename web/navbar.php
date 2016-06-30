@@ -23,12 +23,14 @@ $port = "5432";
 $user = "ecyxybbwrnfpyt";
 $pw = "HAtdGLA-NZz5JTBddqmFFXSarD";
 $PDO = PDO('pgsql:dbname=$db;host=$host;user=$user;password=$pw');
+echo "Connected";
 }
 catch (PDOException $e) {
 	echo "DB ERROR";
 	die();
 }
 //$PDO  = new PDO($dir) or die("cannot open the database");
+/*
 if (isset($btnL) && isset($btnR)): ?>
 <nav class="navbar navbar-default navbar-fixed-top ">
 	<ul class="nav navbar-nav navbar-left">
@@ -86,3 +88,6 @@ foreach($vals as $plan => $days_array) {
 	</div>
 </nav>
 <?php endif; ?>
+*/
+?>
+</body>
