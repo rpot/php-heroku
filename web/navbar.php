@@ -16,6 +16,7 @@
 <body>
 <h1>TRYING TO OPEN</h1>
 <?php 
+/*
 //$dir = 'sqlite:SQL/Demo.db';
 try {
 $db = "dfif9883lkmv0m";
@@ -31,6 +32,7 @@ if($PDO){
 catch (PDOException $e) {
 	echo "DB ERROR";
 }
+*/
 //$PDO  = new PDO($dir) or die("cannot open the database");
 /*
 if (isset($btnL) && isset($btnR)): ?>
