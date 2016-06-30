@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<h1>TRYING TO OPEN</h1>
 <?php 
 //$dir = 'sqlite:SQL/Demo.db';
 try {
@@ -22,12 +23,13 @@ $host = "ec2-54-235-177-62.compute-1.amazonaws.com";
 $port = 5432;
 $user = "ecyxybbwrnfpyt";
 $pw = "HAtdGLA-NZz5JTBddqmFFXSarD";
-$PDO = PDO('pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$pw');
-echo "Connected";
+$PDO = new PDO('pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$pw');
+if($PDO){
+ echo "Connected to the <strong>$db</strong> database successfully!";
+ }
 }
 catch (PDOException $e) {
 	echo "DB ERROR";
-	die();
 }
 //$PDO  = new PDO($dir) or die("cannot open the database");
 /*
