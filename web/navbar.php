@@ -16,4 +16,21 @@
 <body>
 <h1>TRYING TO OPEN</h1>
 
+<?php 
+try {
+$db = "dfif9883lkmv0m";
+$host = "ec2-54-235-177-62.compute-1.amazonaws.com";
+$port = 5432;
+$user = "ecyxybbwrnfpyt";
+$pw = "HAtdGLA-NZz5JTBddqmFFXSarD";
+$PDO = new PDO('pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$pw');
+if($PDO){
+ echo "Connected to the <strong>$db</strong> database successfully!";
+ }
+}
+catch (PDOException $e) {
+	echo "DB ERROR";
+}
+?>
+
 </body>
