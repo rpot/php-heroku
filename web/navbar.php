@@ -15,8 +15,20 @@
 
 <body>
 <?php 
-$dir = 'sqlite:SQL/Demo.db';
-$PDO  = new PDO($dir) or die("cannot open the database");
+//$dir = 'sqlite:SQL/Demo.db';
+try {
+$db = "dfif9883lkmv0m";
+$host = "ec2-54-235-177-62.compute-1.amazonaws.com";
+$port = "5432";
+$user = "ecyxybbwrnfpyt";
+$pw = "HAtdGLA-NZz5JTBddqmFFXSarD";
+$PDO = PDO('pgsql:dbname=$db;host=$host;user=$user;password=$pw');
+}
+catch (PDOException $e) {
+	echo "DB ERROR";
+	die();
+}
+//$PDO  = new PDO($dir) or die("cannot open the database");
 if (isset($btnL) && isset($btnR)): ?>
 <nav class="navbar navbar-default navbar-fixed-top ">
 	<ul class="nav navbar-nav navbar-left">
